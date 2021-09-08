@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Burbuja;
+package aa2022;
+import Ordenamiento.BurbujaTradicional;
+import Ordenamiento.BurbujaOptimizado;
 import static Herramientas.GenerarDatos.CasoMedio;
 import static Herramientas.GenerarDatos.CasoMedioInt;
 import static Herramientas.GenerarDatos.MejorCaso;
@@ -44,8 +46,8 @@ public class TestMain {
       System.out.println();*/
       
       
-    int[] rango = {1, 4};
-    int dimension = 5;
+    int[] rango = {1, 90};
+    int dimension = 5000;
     int[] arreglo1 = CasoMedioInt(dimension, rango);
     int[] arreglo2 = PeorCasoInt(dimension);
     int[] arreglo3 = MejorCasoInt(dimension);
@@ -53,7 +55,7 @@ public class TestMain {
     BurbujaTradicional bt = new BurbujaTradicional();
     BurbujaOptimizado bo = new BurbujaOptimizado();
     
-    bt.ordenar(arreglo3);
+    bo.ordenar(arreglo3);
     System.out.println(bo.gettTotal());
     
     bt.ordenar(arreglo3);

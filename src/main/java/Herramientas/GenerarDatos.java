@@ -25,8 +25,8 @@ public class GenerarDatos {
         //el rango es entre que numeros está el arreglo, ej. un arreglo entre 0 y 100, de 5 elementos (n)
         double[] arreglo = new double[n];
          Random rnd = new Random();
-        for (int x=0;x<n;x++)
-            arreglo[x] = rnd.nextInt(rango[1] - rango[0] + 1) + rango[0];       
+        for (int x=0;x<n;x++)  // 4 - 8   //8-4+1=5 //n = este es el límite del número aleatorio que se devolverá //retorna un aleatorio entre 0 y n
+            arreglo[x] = rnd.nextInt(rango[1] - rango[0] + 1) + rango[0];      // se suma rango[0] para marcar el inició del rango y evitar num menores  
         return arreglo;
     }
     public static int[] CasoMedioInt(int n, int[] rango){
