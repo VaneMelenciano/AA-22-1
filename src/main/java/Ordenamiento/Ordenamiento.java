@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Burbuja;
+package Ordenamiento;
 
 /**
  *
  * @author Vanessa
  */
-public class BurbujaTradicional {
+public abstract class Ordenamiento {
     public long tInicio;
     public long tFinal;
     public long tTotal;
 
-    public BurbujaTradicional() {
+    public Ordenamiento() {
         this.tFinal = 0;
         this.tInicio = 0;
         this.tTotal = 0 ;
@@ -38,18 +38,6 @@ public class BurbujaTradicional {
         return tTotal;
     }
 
-    private void ordenarDatos(int[] arreglo) {
-        int[] arreglo1 = arreglo.clone();
-      int i, j, aux;
-        for (i = 0; i < arreglo1.length - 1; i++) {
-            for (j = 0; j < arreglo1.length - 1; j++) {
-                if (arreglo1[j + 1] < arreglo1[j]) {
-                    aux = arreglo1[j + 1];
-                    arreglo1[j + 1] = arreglo1[j]; 
-                    arreglo1[j] = aux; 
-                }
-            }
-        }
-    }    
-    
+    public void ordenarDatos(int[] arreglo) {
+    } 
 }
