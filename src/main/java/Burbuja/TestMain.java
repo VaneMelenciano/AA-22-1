@@ -53,7 +53,7 @@ public class TestMain {
     BurbujaTradicional bt = new BurbujaTradicional();
     BurbujaOptimizado bo = new BurbujaOptimizado();
     
-    bo.ordenar(arreglo3);
+    bt.ordenar(arreglo3);
     System.out.println(bo.gettTotal());
     
     bt.ordenar(arreglo3);
