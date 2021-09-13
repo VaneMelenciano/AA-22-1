@@ -22,6 +22,7 @@ public abstract class Ordenamiento {
   
     public void ordenar(int[] datos){
         this.tInicio = System.currentTimeMillis(); //le pide al sistema el tiempo registrado en ese moemnto, en milisegundos
+        // 10^(-3) s  = 0.001
         ordenarDatos(datos);
         this.tFinal = System.currentTimeMillis(); // vuelve a hacer petición del tiempo para saber cuando termina el ordenamiento
         this.tTotal = this.tFinal - this.tInicio; //se estima el tiempo total que le llevo ejecutar el ordenamiento

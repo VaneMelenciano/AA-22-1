@@ -20,25 +20,15 @@ public class InsertSort extends Ordenamiento{
      */
     @Override
     public void ordenarDatos(int[] arreglo) {
-        /*this.initTime = System.currentTimeMillis();
-        int n = data.length;
-        double key;
-        int j;
-        for (int i = 1; i < n; i++) {
-            key = data[i];
-            // y asignación.
+        int i, j, key;
+        for (i = 1; i < arreglo.length; i++) {
+            key = arreglo[i];
             j = i - 1;
-            
-            //Se mueven hacia adelante los elementos de data[0,...i-1] hasta que la llave sea mayor o igual que data[j]
-            
-            while(j >= 0 && data[j] > key) {
-                data[j+1] = data[j];
+            while(j >= 0 && arreglo[j] > key) {
+                arreglo[j+1] = arreglo[j];
                 j--;
             }
-            // Insertamos la llave en donde corresponde
-            data[j + 1] = key;
+            arreglo[j + 1] = key;
         }
-        this.endTime = System.currentTimeMillis();
-        this.totalTime = this.endTime - this.initTime; */
     }  
 }
