@@ -27,8 +27,8 @@ import java.util.Calendar;
 public class TestMain {
     public static void main(String[] args) {
     int[] rango = {1, 90};
-    int dimension = 10000;
-    //int dimension = 50000;
+    //int dimension = 10000;
+    int dimension = 50000;
     int[] arreglo1 = CasoMedioInt(dimension, rango);
     int[] arreglo2 = PeorCasoInt(dimension);
     int[] arreglo3 = MejorCasoInt(dimension);
@@ -49,23 +49,24 @@ public class TestMain {
     System.out.println(in.gettTotal());*/
     System.out.println(ZonedDateTime.now());
     //for(int n=500, i=0; n<550 && i<50; n++, i++){
-    for(int n=0; n<dimension; n++){
-    //for(int n=0; n<dimension; n+=5){
-        int[] arreglo = MejorCasoInt(n);
-        
-        bt.ordenar(arreglo.clone());
-        tiempos1[n] = bt.gettTotal(); 
+    //for(int n=0; n<dimension; n++){
+    for(int n=0; n<dimension; n+=5){
+        int[] arreglo = PeorCasoInt(n);
+        in.ordenar(arreglo.clone());
+        tiempos3[n] = in.gettTotal(); 
         bo.ordenar(arreglo.clone());
         tiempos2[n] = bo.gettTotal(); 
-        in.ordenar(arreglo.clone());
-        tiempos3[n] = in.gettTotal();
+        bt.ordenar(arreglo.clone());
+        tiempos1[n] = bt.gettTotal();
+        
+        
         
         System.out.println(n);
         //System.out.println("\n" +n + " " + tiempos[n] + " "+  bo.gettTotal());
     }
     
    
-    Grafica g1 = new Grafica("N","Tiempo (ms)","MejorCaso");
+    Grafica g1 = new Grafica("N","Tiempo (ms)","PeorCaso");
         g1.agregarSerie("Burbuja Tradicional", tiempos1);
         g1.agregarSerie("Burbuja Optimizada", tiempos2);
         g1.agregarSerie("Insert Sort", tiempos3);

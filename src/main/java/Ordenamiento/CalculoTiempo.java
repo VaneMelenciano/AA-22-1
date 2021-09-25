@@ -9,12 +9,12 @@ package Ordenamiento;
  *
  * @author Vanessa
  */
-public abstract class Ordenamiento {
+public abstract class CalculoTiempo {
     public long tInicio;
     public long tFinal;
     public long tTotal;
 
-    public Ordenamiento() {
+    public CalculoTiempo() {
         this.tFinal = 0;
         this.tInicio = 0;
         this.tTotal = 0 ;
