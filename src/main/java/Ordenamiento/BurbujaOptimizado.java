@@ -9,10 +9,10 @@ package Ordenamiento;
  *
  * @author Vanessa
  */
-public class BurbujaOptimizado extends CalculoTiempo{
+public class BurbujaOptimizado extends Algoritmo{
 
     public BurbujaOptimizado() {
-        super();
+        super("Burbuja Optimizada");
     }
 
     /**

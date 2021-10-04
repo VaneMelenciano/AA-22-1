@@ -42,7 +42,7 @@ public class Grafica {
      
     }
     
-    public void agrearSerie(String nombre){
+    public void agregarSerie(String nombre){
         XYSeries serie = new XYSeries(nombre);
         this.series.addSeries(serie);
     }

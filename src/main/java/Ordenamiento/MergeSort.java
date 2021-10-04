@@ -9,10 +9,11 @@ package Ordenamiento;
  *
  * @author Vanessa
  */
-public class MergeSort extends CalculoTiempo{
+public class MergeSort extends Algoritmo{
     private int[] arregloOrdenado;
+    
     public MergeSort() {
-        super();
+        super("Merge Sort");
     }
     /**
      *

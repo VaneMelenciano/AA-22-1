@@ -9,10 +9,10 @@ package Ordenamiento;
  *
  * @author Vanessa
  */
-public class BurbujaTradicional extends CalculoTiempo{
+public class BurbujaTradicional extends Algoritmo{
 
     public BurbujaTradicional() {
-        super();
+        super("Burbuja Tradicional");
     }
 
     @Override

@@ -9,9 +9,9 @@ package Ordenamiento;
  *
  * @author Vanessa
  */
-public class InsertSort extends CalculoTiempo{
+public class InsertSort extends Algoritmo{
     public InsertSort(){
-        super();
+        super("Insert Sort");
     }
 
     /**
