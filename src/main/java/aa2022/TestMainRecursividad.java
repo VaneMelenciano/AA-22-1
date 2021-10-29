@@ -6,13 +6,13 @@
 package aa2022;
 
 
-import Recursividad.Suma;
+
 import Ordenamiento.MergeSort;
+import Ordenamiento.QuickSort;
 import Recursividad.FactorialIterativo;
 import Recursividad.FactorialRecursivo;
 import Recursividad.FibonacciIterativo;
 import Recursividad.FibonacciRecursivo;
-import Recursividad.Suma;
 import Recursividad.SumaRecursiva;
 
 /**
@@ -27,13 +27,13 @@ public class TestMainRecursividad {
         s.sumaRecursiva(1876540,8377); //1933701 nano
         System.out.println();*/
         //FACTORIAL
-        for(int n=1; n<31;n++){
+        /*for(int n=1; n<31;n++){
             FactorialRecursivo fr = new FactorialRecursivo();
             fr.calcularTiempo(n);
             FactorialIterativo fi = new FactorialIterativo();
             fi.calcularTiempo(n);  
             System.out.println(n +"\t" + fr.gettTotal() +"\t" + fi.gettTotal());
-        }
+        }*/
         //FIBONACCI
         /*for(int n=0; n<200;n++){
             FibonacciRecursivo fr1 = new FibonacciRecursivo();
@@ -54,10 +54,24 @@ public class TestMainRecursividad {
             System.out.println(n +"\t" + sr.gettTotal() +"\t" + s.gettTotal());
         }*/
         
+        //Merge Sort
+        /*MergeSort m = new MergeSort();
+        int[] A = {2, 4, 3, 1, 5};
+        m.mergeSortAlgoritmo(A, 0, A.length-1); //0, 5
         System.out.println();
         
-        /*MergeSort m = new MergeSort();
-        int[] A = {5, 4, 3, 2, 1};
-        m.MergeSortAlgoritmo(A, 0, A.length-1); //0, 5*/
+        int[] B = m.getArregloOrdenado();
+        for(int i=0; i<B.length; i++){
+            System.out.print(B[i]);
+        }*/
+        /*int[] A = {3, 2, 5, 4, 1};
+        QuickSort sq = new QuickSort();
+       // sq.quickSortAlgoritmo(A, 0, A.length-1);
+       sq.quickSortAlgoritmo(A, 0, A.length-1);
+       //sq.quickSortAlgoritmo(A);
+        int[] B = sq.getArregloOrdenado();
+        for(int i=0; i<B.length; i++){
+            System.out.print(B[i]);
+        }*/
     }
 }

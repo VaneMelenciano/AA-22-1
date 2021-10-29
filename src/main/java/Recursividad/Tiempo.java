@@ -53,6 +53,8 @@ public abstract class Tiempo {
     }
     public void algoritmo(long n1){
     }
+    public void algoritmo(int n1){
+    }
     
     public long getResultado() {
         return resultado;

@@ -10,15 +10,22 @@ package Recursividad;
  * @author Vanessa
  */
 public class FibonacciRecursivo extends Tiempo{
+    int contador;
     public FibonacciRecursivo(){
         super();
+        this.contador=0;
     }
     @Override
-    public void algoritmo(long n){
-        resultado = fibonnacciR(n);
+    public void algoritmo(int n){
+        resultado = fibonacciR(n);
     }
-    public long fibonnacciR(long n){
+    public long fibonacciR(int n){
         if(n == 0 || n == 1) return n;
-        else return (fibonnacciR(n - 2) + fibonnacciR(n - 1));
+        contador+=2;
+        //System.out.println("f(" + (n-2) + ")  +   f("+ (n-1)+")");
+        return (fibonacciR(n - 2) + fibonacciR(n - 1));
+    }
+    public int getContador(){
+        return this.contador;
     }
 }

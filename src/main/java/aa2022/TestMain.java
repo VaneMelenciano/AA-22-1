@@ -17,6 +17,7 @@ import Ordenamiento.MergeSort;
 import Herramientas.Grafica;
 import Ordenamiento.Algoritmo;
 import Ordenamiento.InsertSort;
+import Ordenamiento.QuickSort;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -32,21 +33,37 @@ public class TestMain {
     
     
     
-    /*int[] rango = {1, 90};
+    //int[] rango = {1, 1000};
     //int dimension = 10000;
-    int dimension = 900;
-    int[] arreglo1 = CasoMedioInt(dimension, rango);
-    int[] arreglo2 = PeorCasoInt(dimension);
-    int[] arreglo3 = MejorCasoInt(dimension);
+    //int dimension = 12500;
+    //int[] arreglo1 = CasoMedioInt(dimension, rango);
+    //int[] arreglo2 = PeorCasoInt(dimension);
+    //int[] arreglo3 = MejorCasoInt(dimension);
     
-    double[] tiempos1 = new double[dimension];
+    /*double[] tiempos1 = new double[dimension];
     double[] tiempos2 = new double[dimension];
     double[] tiempos3 = new double[dimension];
+    double[] tiempos4 = new double[dimension];
+    double[] tiempos5 = new double[dimension];
     
     BurbujaTradicional bt = new BurbujaTradicional();
     BurbujaOptimizado bo = new BurbujaOptimizado();
-    InsertSort in = new InsertSort();*/
+    InsertSort in = new InsertSort();
+    MergeSort ms = new MergeSort();
+    QuickSort qs = new QuickSort();*/
     
+    //CALENTAR
+    /*System.out.println("Empieza a calentar: " + ZonedDateTime.now());
+    for(int n=1; n<9000; n++){
+        //System.out.println(n);
+        int[] arreglo = MejorCasoInt(n);
+        //in.ordenar(arreglo.clone());
+        //bo.ordenar(arreglo.clone()); 
+        //bt.ordenar(arreglo.clone());
+        ms.ordenar(arreglo.clone());
+        qs.ordenar(arreglo.clone());
+        
+    }*/
     /*MergeSort ms = new MergeSort();
     ms.ordenarDatos(arreglo2.clone());
     System.out.print("Original:\t");
@@ -67,30 +84,41 @@ public class TestMain {
     System.out.println(bt.gettTotal());
     in.ordenar(arreglo1);
     System.out.println(in.gettTotal());*/
-   /* System.out.println(ZonedDateTime.now());
+    
+    //System.out.println("Empieza a calcular tiempos: " + ZonedDateTime.now());
     //for(int n=500, i=0; n<550 && i<50; n++, i++){
     //for(int n=0; n<dimension; n++){
-    for(int n=0; n<dimension; n+=5){
-        int[] arreglo = PeorCasoInt(n);
-        in.ordenar(arreglo.clone());
-        tiempos3[n] = in.gettTotal(); 
-        bo.ordenar(arreglo.clone());
-        tiempos2[n] = bo.gettTotal(); 
-        bt.ordenar(arreglo.clone());
-        tiempos1[n] = bt.gettTotal();
-    }
+    /*for(int n=1; n<dimension; n++){
+        System.out.println(n);
+        int[] arreglo = CasoMedioInt(n, rango);
+        //in.ordenar(arreglo.clone());
+        //tiempos3[n] = in.gettTotal(); 
+        //bo.ordenar(arreglo.clone());
+        //tiempos2[n] = bo.gettTotal(); 
+        
+        //bt.ordenar(arreglo.clone());
+        //tiempos1[n] = bt.gettTotal();
+        ms.ordenar(arreglo.clone());
+        tiempos4[n] = ms.gettTotal();
+        qs.ordenar(arreglo.clone());
+        tiempos5[n] = qs.gettTotal();
+    }*/
         
         
         //System.out.println(n);
         //System.out.println("\n" +n + " " + tiempos[n] + " "+  bo.gettTotal());
     
     
-   
-        Grafica g1 = new Grafica("N","Tiempo (ms)","PeorCaso");
-        g1.agregarSerie("Burbuja Tradicional", tiempos1);
-        g1.agregarSerie("Burbuja Optimizada", tiempos2);
-        g1.agregarSerie("Insert Sort", tiempos3);
-        g1.crearGrafica();
+        //System.out.println("Empieza a graficar: " + ZonedDateTime.now());
+        //Grafica g1 = new Grafica("N","Tiempo (ms)","CasoMedio");
+         //g1.agregarSerie("Burbuja Tradicional", tiempos1);
+       //g1.agregarSerie("Burbuja Optimizada", tiempos2);
+        //g1.agregarSerie("Insert Sort", tiempos3);
+        //g1.agregarSerie("Merge Sort", tiempos4);
+        //g1.agregarSerie("Quick Sort", tiempos5);
+        
+        
+        /*g1.crearGrafica();
         g1.mostrarGrafica();
         System.out.println(ZonedDateTime.now());*/
         
@@ -99,7 +127,7 @@ public class TestMain {
     BurbujaOptimizado bo = new BurbujaOptimizado();
     InsertSort in = new InsertSort();
     
-        for(int i=500; i<=5300; i+=300){
+        for(int i=1; i<=5300; i+=300){
             int[] rango = {1, 100};
             int dimension = i;
             System.out.println("N: " + dimension);
@@ -125,6 +153,7 @@ public class TestMain {
             
             
         }*/
+    //Comparador
         ArrayList<Algoritmo> algoritmos = new ArrayList<>();
         algoritmos.add(new BurbujaOptimizado());
         algoritmos.add(new InsertSort());
