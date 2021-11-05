@@ -64,7 +64,7 @@ public class Ajedrez {
             /*calculamos la primera siguiente posición*/
             boolean primeraPos = false;
             int k=0;
-            while(!primeraPos && k<this.n){ //si k llega a 8 y primeraPos es falso, no hay posibilidades
+            while(!primeraPos && k<8){ //si k llega a 8 y primeraPos es falso, no hay posibilidades
                xA = x + p.get(k)[0];
                //System.out.println("\tx = " + x + "  sum:" + p.get(k)[0]);
                //System.out.println("\ty = " + y + "  sum:" + p.get(k)[1]);
