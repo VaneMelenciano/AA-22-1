@@ -12,13 +12,13 @@ import java.util.List;
  *
  * @author Vanessa
  */
-public class Ajedrez {
+public class Caballo {
     private int[][] tablero;
     private int n;
     List<Integer[]> p; //posibles siguientes posiciones
-    public Ajedrez(int x, int y){
+    public Caballo(int x, int y){
         this.n=8;
-       if(x>0 && x<n && y>0 && y<n){
+       if(x>=0 && x<n && y>=0 && y<n){
         this.tablero = new int[this.n][this.n]; 
         this.p = new ArrayList<>();
         sigPosiciones();
@@ -28,9 +28,9 @@ public class Ajedrez {
            System.out.println("Punto inicial fuera del tablero");
        }
     }
-    public Ajedrez(int x, int y, int n){
+    public Caballo(int x, int y, int n){
        this.n=n;
-       if(x>0 && x<n && y>0 && y<n){
+       if(x>=0 && x<n && y>=0 && y<n){
         this.tablero = new int[n][n]; 
         this.p = new ArrayList<>();
         sigPosiciones();
@@ -39,17 +39,7 @@ public class Ajedrez {
        }else{
            System.out.println("Punto inicial fuera del tablero");
        }
-    }   
-    /*
-    p0 = x+2,y+1
-    p1 = x+2,y-1
-    p2 = x+1,y-2
-    p3 = x-1,y-2
-    p4 = x-2,y-1
-    p5 = x-1,y+1
-    p6 = x-1,y+2
-    p7 = x+1,y+2
-    */
+    } 
     public void llenarTablero(int x1, int y1){
         /*se pone en el tablero en num 1*/
         int x =x1, y=y1; //posiciones actuales
@@ -70,7 +60,7 @@ public class Ajedrez {
                //System.out.println("\ty = " + y + "  sum:" + p.get(k)[1]);
                yA = y + p.get(k)[1]; 
            
-               if(xA>=0 && yA>=0 && xA<this.n && yA<this.n && this.tablero[yA][xA]==0){ //si xA,yA está dentro del tablero
+               if(xA>=0 && yA>=0 && xA<this.n && yA<this.n && this.getTablero()[yA][xA]==0){ //si xA,yA está dentro del tablero
                    xMin=xA; yMin=yA;
                    min = calcularPosibilidades(xA, yA);
                    primeraPos=true;
@@ -85,7 +75,7 @@ public class Ajedrez {
                     xA = x + p.get(i)[0];
                     yA = y + p.get(i)[1];
                     
-                    if(xA>=0 && yA>=0 && xA<this.n && yA<this.n && this.tablero[yA][xA]==0){ //si xA,yA está dentro del tablero y está desocupado el lugar
+                    if(xA>=0 && yA>=0 && xA<this.n && yA<this.n && this.getTablero()[yA][xA]==0){ //si xA,yA está dentro del tablero y está desocupado el lugar
                        //System.out.println("\tx = " + x + "  sum:" + p.get(k)[0]);
                         //System.out.println("\ty = " + y + "  sum:" + p.get(k)[1]);
                     
@@ -118,7 +108,7 @@ public class Ajedrez {
             xA = x + p.get(i)[0];
             yA = y + p.get(i)[1];
             //System.out.println("\tx=" + xA + "y=" +yA);
-            if(xA>=0 && yA>=0 && xA<this.n && yA<this.n && this.tablero[yA][xA]==0){ //si xA,yA está dentro del tablero
+            if(xA>=0 && yA>=0 && xA<this.n && yA<this.n && this.getTablero()[yA][xA]==0){ //si xA,yA está dentro del tablero
                 //pos.set(i, new Integer[] {xA, yA}); //se agrega esa posibilidad
                 cont++;
             }
@@ -140,8 +130,16 @@ public class Ajedrez {
     public void imprimirTalero(){
         for(int i=0; i<this.n; i++){
             for(int j=0; j<n; j++)
-                System.out.print(this.tablero[i][j] + "\t");
+                System.out.print(this.getTablero()[i][j] + "\t");
             System.out.println();
         }
     }
+
+    /**
+     * @return the tablero
+     */
+    public int[][] getTablero() {
+        return tablero;
+    }
+    
 }

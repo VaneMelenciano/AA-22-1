@@ -5,7 +5,9 @@
  */
 package aa2022;
 
-import Ajedrez.Ajedrez;
+import Ajedrez.Caballo;
+import Ajedrez.Tablero;
+import javax.swing.JFrame;
 
 /**
  *
@@ -13,6 +15,15 @@ import Ajedrez.Ajedrez;
  */
 public class TestMainAjedrez {
     public static void main(String[] args) {
-        Ajedrez a = new Ajedrez(4,5,100);
+        int n=20;
+        //punto inicial del caballo
+        int x=6, y=6;
+        Caballo a = new Caballo(x, y, n);
+        
+        JFrame ventana = new JFrame("Tablero de ajedrez");
+        Tablero tablero = new Tablero(n, a.getTablero());
+        ventana.add(tablero);
+        ventana.pack();
+        ventana.setVisible(true);
     }
 }
